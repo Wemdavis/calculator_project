@@ -1,64 +1,68 @@
+/* css reset */
 * {
   margin: 0;
   padding: 0;
-  font-family: "poppins", sans-serif;
   box-sizing: border-box;
-  list-style: none;
 }
-
+/* variables */
 :root {
   --color-secondary: #000;
   --color-primary: #fff;
   --color-grey: #2a2e35;
+  --font-family: "poppins", sans-serif;
 }
-
+/* body */
 body {
   background-color: var(--color-primary);
-  font-family: "poppins", sans-serif;
-  font-size: 1.1rem;  
+  font-family: var(--font-family);
+  font-size: 16px;  
   color: var(--color-primary);
 }
-
+/* container */
 .container{
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
-
+/* calculator */
 #calculator {
   display: grid;
   grid-template-columns: repeat(auto-fit, min-max(80px, 1fr));
+  gap: 10px;
+  max-width: 400px;
   padding: 10px;
   margin: 0 auto;
-  width: 400px;
+  width: 100%;
   background-color: var(--color-grey);
 }
+/* media queries */
 @media (max-width: 767px) {
 #calculator{
-  width: 100%;
   max-width: none;
-  margin: 0;
 }
 }
+/* #display */
 #display {
   grid-column: 1 / span 4;
   background-color: var(--color-secondary);
+  color: var(--color-primary);
   padding: 10px;
   text-align: right;
 }
-
+/* buttons */
 button {
   font-size: 20px;
   padding: 10px;
   margin: 4px;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
-@media (max-width: 600px) {
-  button{
-    font-size: 16px;
-    padding: 6px;
-    margin: 2px;
-  }
+button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 
