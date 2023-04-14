@@ -19,16 +19,18 @@ body {
   color: var(--color-primary);
 }
 
-#calc-container{
-  background-color: var(--color-grey);
-  margin: 50px;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 30px;
-  margin: 10px;
+  background-color: var(--color-grey);
 }
 
 #display {

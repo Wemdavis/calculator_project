@@ -11,7 +11,11 @@ function clear() {
   operator = null;
   display.innerText = '0';
 }
-
+function clearInput() {
+  const currentInput = display.innerText;
+  const newInput = currentInput.slice(0, -1);
+  display.innerText = newInput;
+}
 function appendNumber(number) {
   if (currentOperand.length === 1 && currentOperand[0] === '0' && number === '0') {
     return;
@@ -76,6 +80,7 @@ function compute() {
 
 function addEventListeners() {
   document.getElementById('clear').addEventListener('click', clear);
+  document.getElementById('clearInput').addEventListener('click', clearInput);
   document.getElementById('zero').addEventListener('click', () => appendNumber('0'));
   document.getElementById('one').addEventListener('click', () => appendNumber('1'));
   document.getElementById('two').addEventListener('click', () => appendNumber('2'));
