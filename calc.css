@@ -8,14 +8,16 @@
 :root {
   --color-secondary: #000;
   --color-primary: #fff;
-  --color-grey: #2a2e35;
+  --color-grey: #666666;
+  --color-grey2: #b9b4a7;
+  --color-yellow: #e08907;
   --font-family: "poppins", sans-serif;
 }
 /* body */
 body {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   font-family: var(--font-family);
-  font-size: 16px;  
+  font-size: 28px;  
   color: var(--color-primary);
 }
 /* container */
@@ -29,18 +31,25 @@ body {
 #calculator {
   display: grid;
   grid-template-columns: repeat(auto-fit, min-max(80px, 1fr));
-  gap: 10px;
+  grid-row-gap: 5px;
+  grid-column-gap: 10px;
   max-width: 400px;
   padding: 10px;
   margin: 0 auto;
   width: 100%;
-  background-color: var(--color-grey);
+  height: 60%;
+  background-color: var(--color-secondary);
 }
 /* media queries */
 @media (max-width: 767px) {
 #calculator{
   max-width: none;
 }
+}
+@media (max-width: 767px) {
+  #calculator{
+    max-height: none;
+  }
 }
 /* #display */
 #display {
@@ -55,15 +64,32 @@ button {
   font-size: 20px;
   padding: 10px;
   margin: 4px;
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-grey);
+  color: var(--color-primary);
+  border-radius: 50%;
+  border-width: 0;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 button:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-yellow);
 }
-
-
-
+.double-button {
+  grid-column: span 2;
+  width: 200px;
+  border-radius: 40%;
+}
+.con{
+  background-color: var(--color-yellow);
+  font-weight: bold;
+  font-size: 28px;
+} 
+.con2{
+  background-color: var(--color-grey2);
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 28px;
+}
