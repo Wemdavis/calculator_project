@@ -31,10 +31,16 @@ body {
   grid-template-columns: repeat(auto-fit, min-max(80px, 1fr));
   padding: 10px;
   margin: 0 auto;
-  max-width: 400px;
+  width: 400px;
   background-color: var(--color-grey);
 }
-
+@media (max-width: 767px) {
+#calculator{
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+}
 #display {
   grid-column: 1 / span 4;
   background-color: var(--color-secondary);
